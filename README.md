@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🧠 DecodeX
 
-## Getting Started
+> AI-powered past paper analyzer — Map topic frequency, rank high-yield topics, and generate a smart study planner.
 
-First, run the development server:
+## 🎥 Demo Video
 
+https://github.com/user-attachments/assets/07f653fc-1a90-4983-86e2-d8a040cfc73c
+
+## 🔗 Live Demo
+**[https://decodex-eta.vercel.app](https://decodex-eta.vercel.app)**
+
+---
+
+## 🚀 Problem
+Students rely heavily on past question papers to prepare for exams but lack a structured way to analyze trends. Manually reviewing years of papers is tedious, fails to reveal deeper frequency patterns, and leads to inefficient study sessions where too much time is wasted on low-yield topics.
+
+## 💡 Solution
+DecodeX acts as an AI-powered exam strategist. Students simply upload their past papers, and the system automatically identifies high-frequency topics, maps them against the official syllabus, and generates a mathematically backed, highly prioritized study plan.
+
+---
+
+## ✨ Features
+
+- 📄 **Multi-Paper Upload** — Drag and drop past question papers (PDFs/Images) from multiple years
+- 🔍 **AI Pattern Analysis** — Extract topic frequencies, question styles, and difficulty trends instantly
+- 🎯 **Topic Importance Scoring** — Rank subjects by predicted exam weight based on historical data
+- 🗺️ **Syllabus Cross-Referencing** — Visually map extracted topics against the official syllabus to spot coverage gaps
+- 📅 **Smart Study Planner** — Auto-generate an actionable, prioritized study schedule
+- 📊 **Visual Analytics Dashboard** — Understand your data instantly with interactive heatmaps and radar charts
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Frontend | Next.js 14 (App Router) |
+| Styling | Tailwind CSS |
+| Animations | Framer Motion |
+| Data Viz | Recharts |
+| Document Processing | PDF.js |
+| AI Engine | Claude API |
+| Deployment | Vercel |
+
+---
+
+## ⚙️ Setup & Installation
 ```bash
+# 1. Clone the repo
+git clone [https://github.com/silverfang7x/Decodex.git](https://github.com/silverfang7x/Decodex.git)
+cd Decodex
+
+# 2. Install dependencies
+npm install
+
+# 3. Add environment variables
+# Create a .env.local file in the root directory
+touch .env.local
+
+# 4. Run locally
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 👨‍💻 Built By
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Suryansh Pandey** — B.Tech CSE
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+GitHub: [@silverfang7x](https://github.com/silverfang7x)
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+*Built for AI DecodeX Hackathon by UnsaidTalks 🚀*
