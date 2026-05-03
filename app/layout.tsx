@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Syne } from "next/font/google";
-import { BackToTop, ScrollProgress } from "@/components";
+import { BackToTop } from "@/components/BackToTop";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import "./globals.css";
 
 const syne = Syne({

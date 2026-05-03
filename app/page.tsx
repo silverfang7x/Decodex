@@ -16,12 +16,12 @@ const revealContainer = {
       delayChildren: 0.1,
     },
   },
-};
+} as const;
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
-};
+} as const;
 
 const particleDots = Array.from({ length: 40 }, (_, index) => ({
   id: index,
@@ -36,12 +36,12 @@ const fileListContainer = {
       staggerChildren: 0.08,
     },
   },
-};
+} as const;
 
 const fileListItem = {
   hidden: { opacity: 0, y: 10 },
   show: { opacity: 1, y: 0, transition: { duration: 0.25, ease: "easeOut" } },
-};
+} as const;
 
 const years = Array.from({ length: 10 }, (_, index) => 2015 + index);
 

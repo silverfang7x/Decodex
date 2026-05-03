@@ -45,7 +45,7 @@ const QUOTES = [
 const stepVariants = {
   hidden: { opacity: 0, y: 8 },
   show: { opacity: 1, y: 0, transition: { duration: 0.35, ease: "easeOut" } },
-};
+} as const;
 
 function dataUrlToFile(dataUrl: string, name: string, type: string, lastModified: number) {
   const [meta, content] = dataUrl.split(",");
