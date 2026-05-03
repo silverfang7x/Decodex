@@ -2,9 +2,21 @@
 
 import { useCallback, useState } from "react";
 import { useRouter } from "next/navigation";
+import { Instrument_Serif } from "next/font/google";
 import { useDropzone } from "react-dropzone";
 import { AnimatePresence, motion } from "framer-motion";
-import { CheckCircle2, FileText, Loader2, UploadCloud } from "lucide-react";
+import {
+  BarChart2,
+  Calendar,
+  CheckCircle2,
+  FileText,
+  HelpCircle,
+  Loader2,
+  Search,
+  Target,
+  TrendingUp,
+  UploadCloud,
+} from "lucide-react";
 import { AnimatedCounter, GlassCard } from "@/components";
 import { useAnalysis } from "@/hooks/useAnalysis";
 
@@ -44,6 +56,7 @@ const fileListItem = {
 } as const;
 
 const years = Array.from({ length: 10 }, (_, index) => 2015 + index);
+const instrumentSerif = Instrument_Serif({ weight: "400", subsets: ["latin"] });
 
 function formatFileSize(bytes: number) {
   if (bytes < 1024 * 1024) {
@@ -453,15 +466,163 @@ export default function Home() {
 
       <section
         id="features"
-        className="mx-auto min-h-[40vh] w-full max-w-6xl px-4 py-16 text-icewhite/60 sm:px-6 sm:py-20"
+        className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 sm:py-20"
       >
-        <p className="text-sm">Features section placeholder</p>
+        <div className="text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-amber">
+            Everything You Need
+          </p>
+          <h2
+            className={`${instrumentSerif.className} mt-3 text-4xl text-icewhite sm:text-5xl`}
+          >
+            Built for smarter exam prep
+          </h2>
+        </div>
+
+        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {[
+            {
+              icon: BarChart2,
+              title: "Topic Frequency Heatmap",
+              description:
+                "See exactly which topics appear most across all your uploaded papers",
+            },
+            {
+              icon: Target,
+              title: "High-Yield Topic Ranking",
+              description:
+                "AI ranks topics by predicted exam weight so you study what actually matters",
+            },
+            {
+              icon: Calendar,
+              title: "Smart Study Planner",
+              description:
+                "Auto-generated week-by-week study schedule based on topic priority",
+            },
+            {
+              icon: Search,
+              title: "Syllabus Gap Detection",
+              description:
+                "Identify topics in your syllabus that have never appeared — potential surprises",
+            },
+            {
+              icon: TrendingUp,
+              title: "Year-wise Trend Analysis",
+              description:
+                "Visualize how question patterns have shifted across exam years",
+            },
+            {
+              icon: HelpCircle,
+              title: "Practice Question Suggestions",
+              description:
+                "Get AI-recommended practice questions for your highest-priority topics",
+            },
+          ].map((feature) => {
+            const Icon = feature.icon;
+            return (
+              <div
+                key={feature.title}
+                className="rounded-xl border border-[#1E2130] bg-[#0E1017] p-6 transition duration-300 hover:-translate-y-1 hover:border-amber-500/50 hover:shadow-[0_18px_40px_rgba(0,0,0,0.4)]"
+              >
+                <Icon size={28} className="text-[#F5A623]" />
+                <h3 className="mt-4 text-lg font-semibold text-white">{feature.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-400">{feature.description}</p>
+              </div>
+            );
+          })}
+        </div>
       </section>
+
       <section
         id="demo"
-        className="mx-auto min-h-[40vh] w-full max-w-6xl px-4 py-16 text-icewhite/60 sm:px-6 sm:py-20"
+        className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 sm:py-20"
       >
-        <p className="text-sm">Demo section placeholder</p>
+        <div className="text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-amber">
+            See It In Action
+          </p>
+          <h2
+            className={`${instrumentSerif.className} mt-3 text-4xl text-icewhite sm:text-5xl`}
+          >
+            From papers to insights in seconds
+          </h2>
+        </div>
+
+        <div className="mx-auto mt-10 w-full max-w-4xl rounded-2xl border border-[#1E2130] bg-[#0E1017] p-6 sm:p-8">
+          <div className="flex flex-wrap gap-2.5">
+            {[
+              "📄 47 Questions Analyzed",
+              "🎯 12 Topics Found",
+              "📅 3 Years",
+              "⚠️ 2 Gaps",
+            ].map((pill) => (
+              <span
+                key={pill}
+                className="rounded-full bg-[#1a1d2e] px-3 py-1 text-sm text-white"
+              >
+                {pill}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-8 grid gap-8 lg:grid-cols-2">
+            <div>
+              <p className="mb-4 text-sm font-semibold text-amber">Top Topics by Frequency</p>
+              {[
+                { topic: "Differential Equations", percent: 85, color: "bg-amber" },
+                { topic: "Linear Algebra", percent: 72, color: "bg-amber" },
+                { topic: "Probability", percent: 61, color: "bg-blue-500" },
+                { topic: "Integration", percent: 54, color: "bg-blue-500" },
+                { topic: "Complex Numbers", percent: 38, color: "bg-gray-500" },
+              ].map((item) => (
+                <div key={item.topic} className="mb-4 last:mb-0">
+                  <div className="mb-1.5 flex items-center justify-between text-xs text-icewhite/75">
+                    <span>{item.topic}</span>
+                    <span>{item.percent}%</span>
+                  </div>
+                  <div className="h-2.5 rounded-full bg-white/10">
+                    <div
+                      className={`h-2.5 rounded-full ${item.color}`}
+                      style={{ width: `${item.percent}%` }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div>
+              <p className="mb-4 text-sm font-semibold text-amber">Question Type Split</p>
+              {[
+                { type: "MCQ", visual: "████████░░", percent: 40, width: 40 },
+                { type: "Long Answer", visual: "██████░░░░", percent: 30, width: 30 },
+                { type: "Short Answer", visual: "████░░░░░░", percent: 20, width: 20 },
+                { type: "Numerical", visual: "██░░░░░░░░", percent: 10, width: 10 },
+              ].map((item) => (
+                <div key={item.type} className="mb-4 last:mb-0">
+                  <div className="mb-1.5 flex items-center justify-between text-xs text-icewhite/75">
+                    <span>{item.type}</span>
+                    <span>
+                      {item.visual} {item.percent}%
+                    </span>
+                  </div>
+                  <div className="h-2.5 rounded-full bg-white/10">
+                    <div
+                      className="h-2.5 rounded-full bg-blue-500"
+                      style={{ width: `${item.width}%` }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <a
+            href="/upload"
+            className="mt-8 flex w-full items-center justify-center rounded-xl bg-amber px-6 py-3 text-sm font-semibold text-obsidian transition hover:brightness-110"
+          >
+            Analyze Your Papers Free →
+          </a>
+        </div>
       </section>
 
       <style jsx>{`
