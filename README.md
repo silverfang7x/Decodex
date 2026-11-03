@@ -222,11 +222,6 @@ DecodeX uses a **dark, premium aesthetic** built around:
 
 ---
 
-## 👥 Team
-
-Built at **AI DecodeX Hackathon 2025**
-
----
 
 ## 📄 License
 

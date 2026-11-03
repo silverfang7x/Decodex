@@ -38,9 +38,6 @@ export default function RootLayout({
                 <p className="font-[var(--font-heading)] text-xl font-extrabold tracking-tight text-icewhite">
                   DecodeX
                 </p>
-                <p className="mt-1 text-xs text-icewhite/65">
-                  Built at AI DecodeX Hackathon 2025
-                </p>
               </div>
               <div className="flex items-center gap-3">
                 <a
