@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js 14" />
   <img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Groq-LLaMA_3.3_70B-orange?style=for-the-badge&logo=meta&logoColor=white" alt="Groq LLaMA" />
+  <img src="https://img.shields.io/badge/Groq-GPT_OSS_120B-orange?style=for-the-badge&logo=groq&logoColor=white" alt="Groq AI" />
   <img src="https://img.shields.io/badge/Deployed-Vercel-000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
 </p>
 
@@ -58,7 +58,7 @@ Students preparing for exams often study blindly — spending equal time on ever
 |---|---|
 | **Framework** | [Next.js 14](https://nextjs.org/) (App Router) |
 | **Language** | [TypeScript](https://www.typescriptlang.org/) |
-| **AI / LLM** | [Groq](https://groq.com/) — LLaMA 3.3 70B Versatile |
+| **AI / LLM** | [Groq](https://groq.com/) — OpenAI GPT-OSS 120B / LLaMA |
 | **PDF Parsing** | [pdf.js](https://mozilla.github.io/pdf.js/) (client-side text extraction) |
 | **Styling** | [Tailwind CSS](https://tailwindcss.com/) with custom design tokens |
 | **Animations** | [Framer Motion](https://www.framer.com/motion/) |
@@ -101,7 +101,7 @@ Students preparing for exams often study blindly — spending equal time on ever
 │                           ▼                                  │
 │              ┌────────────────────────┐                      │
 │              │   Groq Cloud API       │                      │
-│              │   LLaMA 3.3 70B       │                      │
+│              │   GPT-OSS 120B        │                      │
 │              └────────────────────────┘                      │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -183,7 +183,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 1. **Upload** — Drag and drop up to 5 past exam papers (PDF format)
 2. **Configure** — Paste your syllabus topics, enter the subject name, and select the year range
-3. **Analyze** — Click "Analyze Papers" — DecodeX extracts text client-side using pdf.js, then sends it to the Groq LLaMA 3.3 70B model
+3. **Analyze** — Click "Analyze Papers" — DecodeX extracts text client-side using pdf.js, then sends it to the Groq AI model
 4. **Insights** — View your personalized dashboard with:
    - 📊 Topic ranking table with importance scores and syllabus match
    - 🔥 Year × Topic frequency heatmap
